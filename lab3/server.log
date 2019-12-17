@@ -1,0 +1,22 @@
+ERROR 2019-12-17 18:38:34,408 root : Unable to connect to the server!
+ERROR:
+HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f5dbc8c4fd0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+ERROR 2019-12-17 18:38:50,033 root : Unable to connect to the server!
+ERROR:
+HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7f50eee4a080>: Failed to establish a new connection: [Errno 111] Connection refused'))
+ERROR 2019-12-17 18:39:20,085 root : Unable to connect to the server!
+ERROR:
+HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcf573cf080>: Failed to establish a new connection: [Errno 111] Connection refused'))
+ERROR 2019-12-17 18:39:26,090 root : Unable to connect to the server!
+ERROR:
+HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcf573cf860>: Failed to establish a new connection: [Errno 111] Connection refused'))
+ERROR 2019-12-17 18:39:32,099 root : Unable to connect to the server!
+ERROR:
+HTTPConnectionPool(host='localhost', port=8000): Max retries exceeded with url: /health (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fcf573e7080>: Failed to establish a new connection: [Errno 111] Connection refused'))
+INFO 2019-12-17 18:40:40,812 root : Сервер доступний. Час на сервері: 2019-12-12/17/19
+INFO 2019-12-17 18:40:40,813 root : Запитувана сторінка: : /health/
+INFO 2019-12-17 18:40:40,813 root : Відповідь сервера місти наступні поля:
+INFO 2019-12-17 18:40:40,813 root : Ключ: date, Значення: 2019-12-12/17/19
+INFO 2019-12-17 18:40:40,813 root : Ключ: current_page, Значення: /health/
+INFO 2019-12-17 18:40:40,813 root : Ключ: server_info, Значення: ['Linux', 'derves-host', '5.0.0-37-generic', '#40~18.04.1-Ubuntu SMP Thu Nov 14 12:06:39 UTC 2019', 'x86_64']
+INFO 2019-12-17 18:40:40,813 root : Ключ: client_info, Значення: python-requests/2.22.0
