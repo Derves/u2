@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+  django:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: derves/repo:compose-django
+    container_name: compose-django
+    ports:
+      - 8000:8000
+  mon:
+    build:
+      context: .
+      dockerfile: Dockerfile.mon
+    image: derves/repo:compose-mon
+    container_name: compose-mon
+    network_mode: "host"
