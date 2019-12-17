@@ -1,0 +1,47 @@
+language: python
+
+python:
+  - "3.7"
+
+jobs:
+  include:
+    - stage: "Build Lab 2."
+      name: "Run tests for Lab 2"
+      python: 3.7
+      install:
+        - cd ./lab2/
+        - pipenv install
+      script: make test || true
+    - stage: "Build Lab 3."
+      name: "Run Djungo Server and test it accessibility. Fail to run and test"
+      python: 3.7
+      install:
+        - cd ./lab3/
+        - pipenv install
+      script: ./scripts/travis-build.sh
+    - stage: "Build Lab 4."
+      name: "Build Docker images & Home task"
+      services:
+        - docker
+      install:
+        - cd ./lab4/
+      script:
+        - docker build -t derves/repo:django-travis .
+        - docker build -t derves/repo:mon-travis --file Dockerfile.mon .
+        - docker images
+        - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin; docker push derves/repo:django-travis; docker push derves/repo:mon-travis; else echo "PR skip deploy"; fi
+    - stage: "Build Lab 5."
+      name: "Build and run Docker images via make"
+      services:
+        - docker
+      install:
+        - cd ./lab5/
+        - make app
+        - make tests
+      script:
+        - make run
+        - make test-app
+        - if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin; make docker-push; else echo "PR skip deploy"; fi
+branches:
+  only:
+    - master
