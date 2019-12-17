@@ -8,3 +8,20 @@
 - Створив Dockerfile та скопіював вміст з репозиторію.
 - Ознайомився з цим файлом
 - Замінив посилання на власні та зробив коміт.
+5. Створив власний репозиторій на Docker Hub.
+![](img/dockerhub-repo.png)
+6. Виконав білд імеджа та завантажив його до репозиторію.
+``` Bash
+docker build -t derves/repo:django .
+docker images 
+docker push derves/repo:django
+```
+- Посилання на репозиторій: [DOCKER_HUB](https://hub.docker.com/r/derves/repo)
+7. Виконав команду для запуску веб-сайту:
+`docker run -it --name=django --rm -p 8000:8000 derves/repo:django`
+8. Створив ще один контейнер із програмою моніторингу веб-сайту:
+- Створив Dockerfile
+- Виконав білд
+- Запустив 2 контейнери одночасно:
+![](img/runtogether.png)
+- Дістав логи з контейнера та зробив коміт.
