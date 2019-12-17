@@ -9,7 +9,7 @@ install:
 	@pipenv install requests ntplib pytest
 test:
 	@echo "Start tests."
-	@pipenv run pytest tests/test.py | tee results.txt
+	@pipenv run pytest tests/tests.py | tee results.txt
 run:
 	@echo "Run Python app."
 	@pipenv run python app.py | tee -a results.txt
