@@ -28,7 +28,7 @@ def main(url):
         for key in data.keys():
             logging.info("Ключ: %s, Значення: %s", key, data[key])
     
-    threading.Timer(6, main, [url]).start()
+    threading.Timer(60, main, [url]).start()
 
 
 if __name__ == '__main__':
